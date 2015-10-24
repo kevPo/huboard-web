@@ -3,18 +3,28 @@
     <div class="title" title="{{issue.title}}">
       {{issue.title}}
     </div>
+  </div>
+
+  <div class="card-body left">
+      {{#if issue.assignee }}
+        {{hb-avatar-tooltip user=issue.assignee width="24" height="24" }}
+      {{/if}}
+  </div>
+
+  <div class="card-body right">
+    <div class="issue-details">
+      <div class="pull-request">
+          {{#if issue.pull_request}} {{#if issue.pull_request.html_url }} <i class="ui-icon ui-icon-21 ui-icon-branch-merge"></i> {{/if}} {{/if}}
+      </div>
+      {{hb-comment-count numberOfComments=numberOfComments}}
+    </div>
     <div class="number">
       <small>#</small>
       <a class="xnumber" href="{{issue.html_url}}" target="_blank" title="View issue on github.com">
         {{issue.number}}
       </a>
-      {{#if issue.pull_request}} {{#if issue.pull_request.html_url }} <i class="ui-icon ui-icon-21 ui-icon-branch-merge"></i> {{/if}} {{/if}}
     </div>
   </div>
-
-  {{#if issue.assignee }}
-    {{hb-avatar-tooltip user=issue.assignee width="24" height="24" }}
-  {{/if}}
 
   <div class="card-labels">
       {{#each label in cardLabels }}

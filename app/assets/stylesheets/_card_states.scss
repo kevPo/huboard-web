@@ -70,6 +70,12 @@
      }
   }
 
+.card-states > img {
+  position: absolute;
+  bottom:5px;
+  left: 5px;
+}
+
 .flex-crumbs {
    .hb-state-closed {
     .active .card-states {

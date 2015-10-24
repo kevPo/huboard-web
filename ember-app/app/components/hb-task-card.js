@@ -51,6 +51,9 @@ var HbCardComponent = Ember.Component.extend(
     issueNumber: function () {
        return this.get("issue.number");
     }.property(),
+    numberOfComments: function() {
+      return this.get("issue.comments");
+    }.property(),
     isLast: function(){
       return this.get("isLastColumn") && this.get("isCollaborator");
     }.property("isLastColumn", "isCollaborator"),
